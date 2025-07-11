@@ -1,0 +1,12 @@
+mod mpc_constraint_system;
+mod mpc_inner_product;
+mod test_inner_product;
+mod mpc_linear_combination;
+mod mpc_prover;
+mod proof;
+mod mpc_generators;
+mod test;
+mod test_mpc_prover;
+mod test_mpc_prover_with_link;
+pub use self::mpc_inner_product::SharedInnerProductProof;
+pub use self::proof::SharedR1CSProof;

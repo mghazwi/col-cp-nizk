@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  party0:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace/collaborative-cp-snarks
+    entrypoint: ["/workspace/docker/with_netlim.sh"]
+    command: ["cargo", "test", "--package", "collaborative-cp-snarks", "--lib", "--", "snark::legogroth16::tests::test_legogroth16::legogroth16", "--exact", "--nocapture", "0", "13", "4", "2"]
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+  party1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace/collaborative-cp-snarks
+    entrypoint: ["/workspace/docker/with_netlim.sh"]
+    command: ["cargo", "test", "--package", "collaborative-cp-snarks", "--lib", "--", "snark::legogroth16::tests::test_legogroth16::legogroth16", "--exact", "--nocapture", "1", "7", "4", "2"]
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
