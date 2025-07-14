@@ -2,7 +2,9 @@
 
 ### This code is for academic purposes ONLY. DO NOT USE IT IN PRACTICE.
 
-This repository contains the source code for implementing the protocols described in the paper.
+This repository contains the source code for implementing the protocols described in the paper:
+
+[Collaborative CP-NIZKs: Modular, Composable Proofs for Distributed Secrets](https://eprint.iacr.org/2024/1209)
 
 The repository contains the following main components:
 
